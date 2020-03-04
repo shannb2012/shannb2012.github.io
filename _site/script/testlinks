@@ -1,0 +1,2 @@
+bundle exec jekyll build
+bundle exec htmlproofer ./_site --allow_missing_href --allow_hash_href --alt_ignore
