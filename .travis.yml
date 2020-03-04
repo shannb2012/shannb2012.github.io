@@ -11,11 +11,17 @@ env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
 script:
+jobs:
+  include:
+    - stage: build
+      script: script/build
+    - stage: testlinks
+      script: script/testlinks
 
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: '45a68e26a59add27c476d2fb9de2442ae078f978'  # Set in the settings page of your repository, as a secure variable
-  keep_history: true
-  on:
-    branch: master
+# deploy:
+#   provider: pages
+#   skip_cleanup: true
+#   github_token: '45a68e26a59add27c476d2fb9de2442ae078f978'  # Set in the settings page of your repository, as a secure variable
+#   keep_history: true
+#   on:
+#     branch: master
