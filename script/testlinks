@@ -1,2 +1,2 @@
 bundle exec jekyll build
-bundle exec htmlproofer ./_site --alt_ignore '/.*/' --allow_hash_href '/.*/' --allow_missing_href '/.*/' --check-html 
+bundle exec htmlproofer ./_site --alt_ignore '/.*/' --allow_hash_href '/.*/' --allow_missing_href '/.*/' --url_ignore "https://html5up.net/" --check-html 
